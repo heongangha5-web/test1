@@ -1,0 +1,1551 @@
+/* ==========================================================================
+   국가공무원인재개발원(NHI) 웹 포털 스타일시트
+   테마: 신뢰와 자연친화적 공직 품격을 상징하는 "포레스트 딥 에메랄드 & 웜 골드"
+   ========================================================================== */
+
+:root {
+  /* 주요 컬러 팔레트 - 고급스러운 Deep Forest Emerald & Warm Gold/Bronze */
+  --primary: #0d4a3e;          /* 메인: 깊고 차분한 다크 에메랄드 그린 */
+  --primary-light: #166554;    /* 서브: 산뜻한 포레스트 그린 */
+  --primary-dark: #072e27;     /* 딥 다크 그린 */
+  --secondary: #1f7a68;        /* 중간 에메랄드 포인트 */
+  --accent: #d97706;           /* 포인트: 따뜻한 앰버 골드 */
+  --accent-light: #fef3c7;     /* 밝은 골드 틴트 */
+  --dark-text: #0f172a;        /* 텍스트 메인 */
+  --body-text: #334155;        /* 본문 텍스트 */
+  --light-text: #64748b;       /* 보조 텍스트 */
+  --bg-white: #ffffff;
+  --bg-light: #f4f7f6;        /* 은은한 세이지 그레이 배경 */
+  --bg-card: #ffffff;
+  --border-color: #e2e8f0;
+  --card-shadow: 0 10px 25px -5px rgba(13, 74, 62, 0.07), 0 8px 10px -6px rgba(13, 74, 62, 0.05);
+  --hover-shadow: 0 20px 30px -10px rgba(13, 74, 62, 0.18);
+  --transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Noto Sans KR', sans-serif;
+  color: var(--dark-text);
+  line-height: 1.6;
+}
+
+body {
+  background-color: var(--bg-white);
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ==========================================================================
+   Header & Top Bar
+   ========================================================================== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 12px rgba(13, 74, 62, 0.08);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.top-bar {
+  background-color: #072e27;
+  color: #cbd5e1;
+  font-size: 0.85rem;
+  padding: 7px 0;
+}
+
+.top-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-notice i {
+  color: #34d399;
+  margin-right: 6px;
+}
+
+.top-links span {
+  margin-left: 20px;
+  letter-spacing: 0.2px;
+}
+
+.top-links i {
+  color: #94a3b8;
+  margin-right: 4px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 76px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-symbol {
+  width: 46px;
+  height: 46px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 10px rgba(13, 74, 62, 0.3);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.2;
+}
+
+.logo-sub {
+  font-size: 0.72rem;
+  color: var(--light-text);
+  font-weight: 500;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-link {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #334155;
+  padding: 8px 4px;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--primary);
+  border-radius: 2px;
+  transition: width 0.2s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+}
+
+.btn-sm {
+  padding: 9px 18px;
+  font-size: 0.88rem;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(13, 74, 62, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(13, 74, 62, 0.35);
+}
+
+.btn-outline {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.btn-outline:hover {
+  background-color: #ffffff;
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  min-height: 580px;
+  color: #ffffff;
+  padding: 100px 0 80px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.hero-bg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.65);
+  transform: scale(1.02);
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(7, 46, 39, 0.93) 0%, rgba(13, 74, 62, 0.88) 60%, rgba(22, 101, 84, 0.82) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 950px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 6px 18px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  color: #6ee7b7;
+  margin-bottom: 24px;
+}
+
+.hero-title {
+  font-size: 3.1rem;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 22px;
+  letter-spacing: -1px;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #ffffff, #a7f3d0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-desc {
+  font-size: 1.15rem;
+  color: #e2e8f0;
+  line-height: 1.7;
+  margin-bottom: 36px;
+  font-weight: 400;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 50px;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  background: rgba(7, 46, 39, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  padding: 24px 28px;
+  border-radius: var(--radius-md);
+}
+
+.stat-card {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #34d399;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+}
+
+/* ==========================================================================
+   Section Common
+   ========================================================================== */
+.section {
+  padding: 90px 0;
+}
+
+.bg-light {
+  background-color: var(--bg-light);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-header {
+  margin-bottom: 48px;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--secondary);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--dark-text);
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--body-text);
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   About & Vision Cards
+   ========================================================================== */
+.vision-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.vision-card {
+  background: #ffffff;
+  padding: 36px 30px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.vision-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--hover-shadow);
+  border-color: #a7f3d0;
+}
+
+.card-icon {
+  width: 52px;
+  height: 52px;
+  background-color: #ecfdf5;
+  color: var(--primary);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 22px;
+}
+
+.vision-card h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin-bottom: 12px;
+}
+
+.vision-card .highlight {
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 1rem;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.card-desc {
+  font-size: 0.95rem;
+  color: var(--body-text);
+  line-height: 1.6;
+}
+
+.vision-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 0.92rem;
+  color: var(--dark-text);
+}
+
+.vision-list i {
+  color: #10b981;
+  margin-top: 4px;
+}
+
+.core-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 16px;
+}
+
+.core-badges .badge {
+  background-color: #ecfdf5;
+  color: var(--primary-light);
+  border: 1px solid #a7f3d0;
+  padding: 5px 12px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.core-badges .badge i {
+  font-size: 0.75rem;
+}
+
+/* ==========================================================================
+   Study Spotlight Section (학습 이미지 배너)
+   ========================================================================== */
+.study-spotlight-section {
+  padding: 40px 0 80px;
+}
+
+.spotlight-card {
+  background-color: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  overflow: hidden;
+  align-items: center;
+}
+
+.spotlight-img-wrap {
+  position: relative;
+  height: 100%;
+  min-height: 380px;
+}
+
+.spotlight-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-caption-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: rgba(7, 46, 39, 0.88);
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+  font-size: 0.82rem;
+  padding: 6px 14px;
+  border-radius: 4px;
+}
+
+.spotlight-content {
+  padding: 48px 44px;
+}
+
+.badge-accent {
+  display: inline-block;
+  background-color: #fef3c7;
+  color: #b45309;
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.spotlight-content h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--dark-text);
+  margin-bottom: 14px;
+  line-height: 1.35;
+}
+
+.spotlight-content p {
+  color: var(--body-text);
+  font-size: 1.02rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.spotlight-features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.feat-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.feat-item i {
+  font-size: 1.3rem;
+  color: var(--primary);
+  background-color: #ecfdf5;
+  padding: 10px;
+  border-radius: var(--radius-sm);
+}
+
+.feat-item strong {
+  display: block;
+  font-size: 0.98rem;
+  color: var(--dark-text);
+}
+
+.feat-item span {
+  font-size: 0.88rem;
+  color: var(--light-text);
+}
+
+/* ==========================================================================
+   Tasks Grid (주요업무 카드 - 이미지 헤더 포함)
+   ========================================================================== */
+.tasks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.task-card {
+  background-color: #ffffff;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.task-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--hover-shadow);
+  border-color: #a7f3d0;
+}
+
+.task-img-header {
+  position: relative;
+  height: 190px;
+  overflow: hidden;
+}
+
+.task-img-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.task-card:hover .task-img-header img {
+  transform: scale(1.06);
+}
+
+.task-chip {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: var(--primary);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+.chip-gold { background-color: #d97706; }
+.chip-cyan { background-color: #0d9488; }
+.chip-purple { background-color: #6366f1; }
+.chip-teal { background-color: #047857; }
+.chip-amber { background-color: #b45309; }
+
+.task-card-body {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.task-card-body h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin-bottom: 8px;
+}
+
+.task-summary {
+  font-size: 0.92rem;
+  color: var(--light-text);
+  line-height: 1.5;
+  margin-bottom: 16px;
+  min-height: 42px;
+}
+
+.task-detail-list {
+  border-top: 1px dashed var(--border-color);
+  padding-top: 14px;
+  margin-top: auto;
+}
+
+.task-detail-list li {
+  position: relative;
+  padding-left: 14px;
+  font-size: 0.88rem;
+  color: var(--body-text);
+  margin-bottom: 8px;
+  line-height: 1.45;
+}
+
+.task-detail-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   Education Action Gallery (생생한 공무원 교육 현장 갤러리)
+   ========================================================================== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.gallery-card {
+  background-color: #ffffff;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+}
+
+.gallery-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--hover-shadow);
+}
+
+.gallery-img-box {
+  height: 200px;
+  overflow: hidden;
+}
+
+.gallery-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-card:hover .gallery-img-box img {
+  transform: scale(1.08);
+}
+
+.gallery-info {
+  padding: 20px 18px;
+}
+
+.gallery-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--secondary);
+  background-color: #ecfdf5;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.gallery-info h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin-bottom: 6px;
+}
+
+.gallery-info p {
+  font-size: 0.85rem;
+  color: var(--light-text);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Program Tabs (교육과정 체계)
+   ========================================================================== */
+.tabs-container {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.tabs-header {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  padding: 12px 22px;
+  border-radius: 50px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--body-text);
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tab-btn:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.tab-btn.active {
+  background-color: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(13, 74, 62, 0.25);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tab-card {
+  background-color: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  overflow: hidden;
+}
+
+.tab-text {
+  padding: 44px 40px;
+}
+
+.course-badge {
+  display: inline-block;
+  background-color: #ecfdf5;
+  color: var(--primary-light);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.course-badge.badge-orange { background-color: #fef3c7; color: #b45309; }
+.course-badge.badge-teal { background-color: #ccfbf1; color: #0f766e; }
+.course-badge.badge-purple { background-color: #ede9fe; color: #6d28d9; }
+
+.tab-text h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--dark-text);
+  margin-bottom: 12px;
+}
+
+.tab-text p {
+  color: var(--body-text);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 22px;
+}
+
+.detail-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.detail-badges .pill {
+  background-color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #1e293b;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.program-points li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: #334155;
+  margin-bottom: 10px;
+}
+
+.program-points i {
+  color: var(--primary);
+}
+
+.tab-visual-img {
+  position: relative;
+  min-height: 280px;
+}
+
+.tab-visual-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.visual-tag {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: rgba(7, 46, 39, 0.9);
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.92rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ==========================================================================
+   Cooperating Institutions (협력 기관 로고 섹션)
+   ========================================================================== */
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.partner-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 24px 20px;
+  text-align: center;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.partner-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  box-shadow: var(--card-shadow);
+}
+
+.partner-logo-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+/* 대한민국 정부 공식 통합상징 태극 로고 */
+.gov-official-logo {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.12));
+  transition: transform 0.25s ease;
+}
+
+.partner-card:hover .gov-official-logo {
+  transform: scale(1.08);
+}
+
+.gov-symbol-circle-sm {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.partner-desc {
+  font-size: 0.8rem;
+  color: var(--light-text);
+  line-height: 1.4;
+}
+
+.partner-role {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--primary);
+  background-color: #ecfdf5;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* 국제기구 및 나라배움터 배지 스타일 로고 */
+.intl-logo-badge {
+  width: 54px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.intl-logo-badge.oecd {
+  background: linear-gradient(135deg, #002d62, #0056b3);
+}
+
+.intl-logo-badge.undp {
+  background: linear-gradient(135deg, #004080, #0066cc);
+}
+
+.nhi-elearn-badge {
+  background: linear-gradient(135deg, #d97706, #f59e0b);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 8px 14px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ==========================================================================
+   Campus Location (찾아오시는 길)
+   ========================================================================== */
+.campus-toggle-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.campus-btn {
+  padding: 15px 30px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--border-color);
+  background: #ffffff;
+  color: var(--body-text);
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.campus-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.campus-btn.active {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 6px 18px rgba(13, 74, 62, 0.25);
+}
+
+.campus-content-box {
+  animation: fadeIn 0.35s ease;
+}
+
+.campus-info-header {
+  background: #f4f7f6;
+  border: 1px solid var(--border-color);
+  padding: 24px 30px;
+  border-radius: var(--radius-md);
+  margin-bottom: 30px;
+}
+
+.campus-main-badge {
+  display: inline-block;
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.campus-main-badge.badge-forest-light {
+  background: #1f7a68;
+}
+
+.campus-info-header h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--dark-text);
+  margin-bottom: 6px;
+}
+
+.address-text {
+  font-size: 1.02rem;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.address-text i {
+  color: #ef4444;
+  margin-right: 6px;
+}
+
+.campus-tel {
+  font-size: 0.95rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.location-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 32px;
+}
+
+/* Map Style */
+.map-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.map-view {
+  height: 380px;
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+}
+
+.mock-map {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jincheon-map-bg {
+  background: #e2e8f0 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80"><path d="M0 40 H80 M40 0 V80" stroke="%23cbd5e1" stroke-width="2"/><circle cx="40" cy="40" r="3" fill="%23166554"/></svg>') repeat;
+}
+
+.gwacheon-map-bg {
+  background: #e2e8f0 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80"><path d="M0 40 H80 M40 0 V80" stroke="%23cbd5e1" stroke-width="2"/><circle cx="40" cy="40" r="3" fill="%23d97706"/></svg>') repeat;
+}
+
+.map-pin-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.pin-icon.text-forest {
+  font-size: 3rem;
+  color: var(--primary);
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+.pin-tooltip {
+  background: rgba(7, 46, 39, 0.95);
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-top: 8px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.pin-tooltip span {
+  font-size: 0.75rem;
+  color: #a7f3d0;
+  font-weight: normal;
+}
+
+.map-controls {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  gap: 10px;
+}
+
+.map-link-btn {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.map-link-btn.naver {
+  background-color: #03c75a;
+}
+
+.map-link-btn.naver:hover {
+  background-color: #02b150;
+}
+
+.map-link-btn.kakao {
+  background-color: #fee500;
+  color: #191919;
+}
+
+.map-link-btn.kakao:hover {
+  background-color: #fada0a;
+}
+
+.parking-info {
+  background-color: #f8fafc;
+  border: 1px solid var(--border-color);
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  color: #334155;
+}
+
+.parking-info i {
+  color: var(--primary);
+  margin-right: 4px;
+}
+
+/* Transit Detail List */
+.transit-info-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.transit-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 20px 22px;
+  display: flex;
+  gap: 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: var(--transition);
+}
+
+.transit-card:hover {
+  border-color: #a7f3d0;
+  box-shadow: var(--card-shadow);
+}
+
+.transit-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.bus-icon { background-color: #ecfdf5; color: #059669; }
+.train-icon { background-color: #fef3c7; color: #d97706; }
+.subway-icon { background-color: #ede9fe; color: #7c3aed; }
+.car-icon { background-color: #f1f5f9; color: #475569; }
+
+.transit-details h4 {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin-bottom: 6px;
+}
+
+.transit-details ul {
+  font-size: 0.9rem;
+  color: var(--body-text);
+  line-height: 1.55;
+}
+
+.transit-details li {
+  margin-bottom: 4px;
+}
+
+/* ==========================================================================
+   Facilities Grid
+   ========================================================================== */
+.facility-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.facility-item {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.facility-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  box-shadow: var(--card-shadow);
+}
+
+.facility-item i {
+  font-size: 2.2rem;
+  color: var(--primary);
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.facility-item h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin-bottom: 8px;
+}
+
+.facility-item p {
+  font-size: 0.88rem;
+  color: var(--body-text);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Contact & Related Links Box
+   ========================================================================== */
+.contact-box {
+  background: linear-gradient(135deg, #072e27, #0d4a3e);
+  border-radius: var(--radius-lg);
+  padding: 50px 48px;
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.contact-text h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.contact-text p {
+  font-size: 1rem;
+  color: #cbd5e1;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.call-banner {
+  display: flex;
+  gap: 20px;
+}
+
+.call-unit {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 12px 18px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.call-unit .label {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-bottom: 4px;
+}
+
+.call-unit .phone {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #34d399;
+}
+
+.related-portals h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #e2e8f0;
+}
+
+.portal-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 14px 20px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 12px;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.portal-link:hover {
+  background: #ffffff;
+  color: var(--primary);
+  transform: translateX(6px);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer {
+  background-color: #041b17;
+  color: #94a3b8;
+  padding: 50px 0 40px;
+  border-top: 1px solid #0d382f;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-address {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin-bottom: 14px;
+  color: #94a3b8;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.gov-badge-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid #164e43;
+  border-radius: var(--radius-sm);
+  color: #e2e8f0;
+  font-size: 0.85rem;
+}
+
+.gov-symbol-circle-sm {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .gallery-grid,
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vision-grid,
+  .tasks-grid,
+  .facility-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .spotlight-card,
+  .location-layout,
+  .tab-card,
+  .contact-box {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-title {
+    font-size: 2.4rem;
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 16px 0;
+    gap: 14px;
+  }
+
+  .nav-menu {
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .top-bar {
+    display: none;
+  }
+
+  .vision-grid,
+  .tasks-grid,
+  .gallery-grid,
+  .partners-grid,
+  .facility-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .call-banner {
+    flex-direction: column;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+  }
+}

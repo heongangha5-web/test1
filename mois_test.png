@@ -1,0 +1,131 @@
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <style type="text/css">
+        .error {
+            border: 1px solid #ccc;
+            padding: 100px 20px 20px;
+            height: auto;
+            background: url(/images/frt/common/error.gif) center 20px no-repeat;
+            background-size: 100px;
+            text-align: center;
+        }
+
+        .error p {
+            color: #666;
+            font-size: 13px;
+            line-height: 1.6em;
+            margin: 0px 0 2px 0%
+        }
+
+        .error dd {
+            margin-left: -20px;
+        }
+
+        .error .tit {
+            margin-bottom: 10px;
+            font-size: 22px;
+            color: #333;
+            font-weight: bold;
+            letter-spacing: -1px;
+        }
+
+        .error .go {
+            padding-top: 20px;
+            font-weight: bold;
+        }
+
+        .error .go a {
+            color: #0073dc;
+        }
+
+        #contents #error_wrap h1 img {
+            display: none;
+        }
+
+        br.mobile {
+            display: block;
+        }
+
+        @media all and (min-width: 768px) {
+            #error_wrap {
+                width: 70%;
+                max-width: 880px;
+                left: 50%;
+                top: 50%;
+                position: absolute;
+                margin-left: -25%;
+                margin-top: -220px;
+            }
+
+            #error_wrap h1 {
+                margin-bottom: 5px;
+            }
+
+            #contents #error_wrap {
+                width: 100%;
+                left: auto;
+                top: auto;
+                position: relative;
+                margin: 80px auto;
+            }
+
+            .error {
+                padding: 50px 30px;
+                background-position: 60px;
+                background-size: auto;
+                text-align: left;
+            }
+
+            .error p {
+                margin: 0 0 2px 35%;
+            }
+
+            .error .tit {
+                font-size: 26px;
+            }
+
+            br.mobile {
+                display: none;
+            }
+        }
+
+        @media all and (min-width: 1200px) {
+            #error_wrap {
+                width: 60%;
+            }
+
+            .error {
+                background-position: 100px 60px;
+                padding: 50px 30px 50px 100px;
+            }
+
+            .error p {
+                margin: 0 0 2px 28%;
+            }
+        }
+    </style>
+
+    <script type="text/javascript">
+        function fncGoAfterErrorPage() {
+            history.back(-2);
+        }
+    </script>
+</head>
+
+<body>
+<div id="error_wrap">
+    <h1><img src="/images/com/img_logo.png" alt="행정안전부"/></h1>
+    <div class="error">
+        <p class="tit">요청하신 페이지가 없습니다.</p>
+        <p>죄송합니다.<br/>
+            요청하신 페이지의 경로가 잘못되었거나 존재하지 않는 페이지입니다.<br/>
+        </p>
+        <p class="go"><a href="https://www.mois.go.kr">행정안전부 홈페이지 메인으로 바로가기 ▶▶</a></p>
+    </div>
+</div>
+</body>
+</html>
